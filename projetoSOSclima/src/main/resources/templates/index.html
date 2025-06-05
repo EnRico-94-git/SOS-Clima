@@ -1,0 +1,59 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragmentos :: cabecalho(#{pagina_inicial})}" />
+<body>
+  <div th:replace="~{fragmentos :: botao-logout}" />
+  <div class="container">
+    
+    <div style="display: flex; align-items: center;">
+      <img th:src="${img_usuario}" 
+           alt="Imagem de Perfil" style="width: 100px; height: auto; border-radius: 50%;">
+      &nbsp;<h1><span th:text="#{msg_boas_vindas}">Olá</span>, <b><span th:text="${nome_usuario}"></span>!</b></h1>
+    </div>
+    
+    <div class="row">
+      <h1 th:text="#{titulo_pag_index}">Eventos Climáticos Extremos</h1>
+    </div>
+    <div th:replace="~{fragmentos :: mudar_lingua(#{endpoint_pag_inicial})}" />
+    <div class="row">
+      <div class="col-12">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col" th:text="#{tipo_evento}">Tipo</th>
+              <th scope="col" th:text="#{nivel_evento}">Nível</th>
+              <th scope="col" th:text="#{local_evento}">Local</th>
+              <th scope="col" th:text="#{recomendacao_evento}">Recomendação</th>
+              <th scope="col">#</th>
+              <th scope="col">#</th>
+              <th scope="col">#</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="evento : ${eventos}">
+              <td th:text="${evento.tipo}">Tempestade</td>
+              <td th:text="${evento.nivel}">5</td>
+              <td>
+                <span th:text="${evento.local.cidade}">São Paulo</span>, 
+                <span th:text="${evento.local.pais}">Brasil</span>
+              </td>
+              <td th:text="${evento.recomendacao.descricao}">Evite áreas abertas.</td>
+              <td><a th:href="@{/detalhes_evento/{id}(id=${evento.id})}" th:text="#{detalhes}">Detalhes</a></td>
+              <td><a th:href="@{/atualizar_evento/{id}(id=${evento.id})}" th:text="#{atualizar}">Atualizar</a></td>
+              <td><a th:href="@{/remover_evento/{id}(id=${evento.id})}" th:text="#{remover}">Remover</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-12 d-flex justify-content-between">
+        <a href="/cad_evento_climatico" class="btn btn-primary" th:text="#{cad_evento}">Cadastrar Evento</a>
+        <a href="/acesso_negado" class="btn btn-secondary" th:text="#{pag_acesso_negado}">Página de Acesso Negado</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
