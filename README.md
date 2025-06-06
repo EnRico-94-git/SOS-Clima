@@ -37,32 +37,6 @@ Banco de Dados (MySQL 8+ ou Oracle 12c+)
 
 Docker (opcional para containers)
 
-- 🔧 Configuração do Banco de Dados
-1. MySQL (Recomendado)
-No arquivo src/main/resources/application.properties:
-
-properties
-# Configuração do MySQL  
-spring.datasource.url=jdbc:mysql://localhost:3306/sosclima_db?createDatabaseIfNotExist=true  
-spring.datasource.username=root  
-spring.datasource.password=senha_segura  
-spring.jpa.hibernate.ddl-auto=update  
-
-# Configurações avançadas  
-spring.jpa.show-sql=true  
-spring.jpa.properties.hibernate.format_sql=true  
-2. Oracle
-properties
-# Configuração do Oracle  
-spring.datasource.url=jdbc:oracle:thin:@//localhost:1521/XE  
-spring.datasource.username=admin  
-spring.datasource.password=oracle_password  
-spring.datasource.driver-class-name=oracle.jdbc.OracleDriver  
-
-# Hibernate  
-spring.jpa.hibernate.ddl-auto=none  
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.OracleDialect  
-
 - 🚀 Executando a Aplicação
 .Via Maven:
 bash
