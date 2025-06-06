@@ -64,23 +64,24 @@ spring.jpa.hibernate.ddl-auto=none
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.OracleDialect  
 
 - 🚀 Executando a Aplicação
-Via Maven:
+.Via Maven:
 bash
 mvn spring-boot:run  
-Via Docker:
+
+.Via Docker:
 bash
 docker build -t sosclima-api .  
 docker run -p 8080:8080 sosclima-api  
 
 - 📚 Endpoints da API
 Método	Endpoint	Descrição
-POST	/api/eventos	Cadastra novo evento climático
-GET	/api/eventos	Lista todos os eventos
-GET	/api/eventos/{id}	Busca evento por ID
-GET	/api/eventos?tipo={tipo}	Filtra eventos por tipo
-GET	/api/eventos?pais={pais}	Filtra eventos por país
-PUT	/api/eventos/{id}	Atualiza um evento existente
-DELETE	/api/eventos/{id}	Remove um evento (admin apenas)
+- POST	/api/eventos	Cadastra novo evento climático
+- GET	/api/eventos	Lista todos os eventos
+- GET	/api/eventos/{id}	Busca evento por ID
+- GET	/api/eventos?tipo={tipo}	Filtra eventos por tipo
+- GET	/api/eventos?pais={pais}	Filtra eventos por país
+- PUT	/api/eventos/{id}	Atualiza um evento existente
+- DELETE	/api/eventos/{id}	Remove um evento (admin apenas)
 
 - 📊 Documentação Interativa
 Acesse a documentação completa após iniciar a aplicação:
