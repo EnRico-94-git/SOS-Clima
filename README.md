@@ -1,7 +1,7 @@
 SOS-Clima 🌍
 API REST para Monitoramento de Eventos Climáticos Extremos
 
-📌 Descrição
+- 📌 Descrição
 O SOS-Clima é uma API REST que monitora, registra e fornece dados sobre eventos climáticos extremos ocorrendo ao redor do mundo. Desenvolvida em Java com Spring Boot, a aplicação permite:
 
 Cadastro de eventos climáticos (furacões, enchentes, secas, incêndios, etc.)
@@ -12,7 +12,7 @@ Análise de impacto e gravidade
 
 Integração com sistemas de alerta ambiental
 
-🛠️ Tecnologias
+- 🛠️ Tecnologias
 Linguagem: Java 17
 
 Framework: Spring Boot 3.x
@@ -37,7 +37,7 @@ Banco de Dados (MySQL 8+ ou Oracle 12c+)
 
 Docker (opcional para containers)
 
-🔧 Configuração do Banco de Dados
+- 🔧 Configuração do Banco de Dados
 1. MySQL (Recomendado)
 No arquivo src/main/resources/application.properties:
 
@@ -62,7 +62,8 @@ spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
 # Hibernate  
 spring.jpa.hibernate.ddl-auto=none  
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.OracleDialect  
-🚀 Executando a Aplicação
+
+- 🚀 Executando a Aplicação
 Via Maven:
 bash
 mvn spring-boot:run  
@@ -70,7 +71,8 @@ Via Docker:
 bash
 docker build -t sosclima-api .  
 docker run -p 8080:8080 sosclima-api  
-📚 Endpoints da API
+
+- 📚 Endpoints da API
 Método	Endpoint	Descrição
 POST	/api/eventos	Cadastra novo evento climático
 GET	/api/eventos	Lista todos os eventos
@@ -79,7 +81,8 @@ GET	/api/eventos?tipo={tipo}	Filtra eventos por tipo
 GET	/api/eventos?pais={pais}	Filtra eventos por país
 PUT	/api/eventos/{id}	Atualiza um evento existente
 DELETE	/api/eventos/{id}	Remove um evento (admin apenas)
-📊 Documentação Interativa
+
+- 📊 Documentação Interativa
 Acesse a documentação completa após iniciar a aplicação:
 🔗 http://localhost:8080/swagger-ui.html
 
@@ -100,4 +103,4 @@ Push para a branch: git push origin feature/nova-feature
 Abra um Pull Request
 
 🌦️ Aviso Climático: Esta API pode salvar vidas! Contribua com dados precisos para ajudar comunidades em risco.
-Desenvolvido com ❤️ por EnRico-94
+Desenvolvido com ❤️ por Enrico do Nascimento Ferreira Galdino RM552082
