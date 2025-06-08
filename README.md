@@ -49,10 +49,9 @@ docker run -p 8080:8080 sosclima-api
 
 - 📚 Endpoints da API
 Método	Endpoint	Descrição
-- POST	/api/eventos	Cadastra novo evento climático
+- POST /evento/inserir	Cadastra novo evento climático
 - GET	/evento/todas	Lista todos os eventos
 - GET	/evento/{id}	Busca evento por ID
-- GET	/evento/inserir Insere um novo evento
 - PUT	/evento/atualizar{id}	Atualiza um evento existente
 - DELETE /evento/remover/{id}	Remove um evento (admin apenas)
 
